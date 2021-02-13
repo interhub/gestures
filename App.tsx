@@ -1,10 +1,30 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Video } from 'expo-av';
+import * as React from 'react';
+import { Button, StyleSheet, View } from 'react-native';
 
 export default function App() {
+  const video = React.useRef<Video>(null);
+  const [status, setStatus] = React.useState(false);
   return (
+
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Video
+        ref={video}
+        style={styles.video}
+        source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
+        useNativeControls
+        resizeMode="contain"
+        isLooping
+      />
+      <View style={styles.buttons}>
+        <Button
+          title={status ? 'Pause' : 'Play'}
+          onPress={() => {
+            setStatus(!status)
+            status ? video.current?.pauseAsync() : video.current?.playAsync()
+          }}
+        />
+      </View>
     </View>
   );
 }
@@ -16,4 +36,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  video: {
+    width: 300, height: 200
+  },
+  buttons: {
+    height: 200
+  }
 });
