@@ -9,7 +9,7 @@ const Start = () => {
     return (
         <View style={styles.container}>
             <GesturBox>
-                <VideoBox />
+                {/* <VideoBox /> */}
                 <TextItem />
             </GesturBox>
         </View>
