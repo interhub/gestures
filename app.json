@@ -7,6 +7,12 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "android": {
+      "package": "com.devru.rnvideo"
+    },
+    "ios": {
+      "bundleIdentifier": "com.interhub.examples"
+    }
   }
 }

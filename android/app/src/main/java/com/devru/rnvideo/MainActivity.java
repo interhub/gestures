@@ -1,4 +1,4 @@
-package com.rnvideo;
+package com.devru.rnvideo;
 
 import android.os.Bundle;
 

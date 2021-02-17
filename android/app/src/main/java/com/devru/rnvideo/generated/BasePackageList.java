@@ -1,4 +1,4 @@
-package com.rnvideo.generated;
+package com.devru.rnvideo.generated;
 
 import java.util.Arrays;
 import java.util.List;
