@@ -12,7 +12,7 @@ export default function VideoBox() {
                 ref={video}
                 style={styles.video}
                 source={{ uri: 'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4' }}
-                useNativeControls
+                useNativeControls={false}
                 resizeMode="contain"
                 isLooping
             />

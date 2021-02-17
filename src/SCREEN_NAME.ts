@@ -1,0 +1,4 @@
+export enum SCREEN_NAME {
+    NATIVE_GESTURE = 'NATIVE_GESTURE',
+    MENU = 'MENU',
+}
