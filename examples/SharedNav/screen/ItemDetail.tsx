@@ -2,28 +2,33 @@ import React from 'react'
 import {Image, StyleSheet, Text, View} from 'react-native'
 import {SharedElement} from 'react-navigation-shared-element'
 import Start from './Start'
+import Header from '../components/Header'
 
 const ItemDetail = () => {
 
     return (
-        <View style={styles.container}>
-            <SharedElement id="text">
-                <Text style={styles.text}>
-                    SHARED ELEMENT PAGE
-                </Text>
-            </SharedElement>
-            <View style={styles.imgBox}>
-                <SharedElement id="image">
-                    <Image
-                        style={styles.image}
-                        resizeMode="cover"
-                        source={require('../img/bg.jpg')}
-                    />
+        <View style={{flex: 1}}>
+            <Header/>
+            <View style={styles.container}>
+                <SharedElement id="text">
+                    <Text style={styles.text}>
+                        SHARED ELEMENT PAGE
+                    </Text>
                 </SharedElement>
+                <View style={styles.imgBox}>
+                    <SharedElement id="image">
+                        <Image
+                            style={styles.image}
+                            resizeMode="cover"
+                            source={require('../img/bg.jpg')}
+                        />
+                    </SharedElement>
+                </View>
             </View>
         </View>
     )
 }
+
 
 const styles = StyleSheet.create({
     container: {

@@ -7,6 +7,7 @@ import ReanimateGesture from './examples/ReanimateGesture'
 import SharedNav from './examples/SharedNav'
 import {SCREEN_NAME} from './src/SCREEN_NAME'
 import Menu from './src/Menu'
+import {View} from 'react-native'
 
 const Stack = createStackNavigator()
 
@@ -22,3 +23,4 @@ const App = () => {
 }
 
 export default App
+

@@ -21,15 +21,11 @@ const Start = () => {
                 </SharedElement>
             </View>
             <TouchableScale
-                onLongPress={() => {
-                    console.log('copied')
-                    Vibration.vibrate(50)
-                }}
                 friction={5}
                 tension={0.5}
                 activeScale={0.9}
                 onPress={goToDetail} style={styles.imgBox}>
-                <SharedElement id="image">
+                <SharedElement style={{}} id="image">
                     <Image
                         style={styles.image}
                         resizeMode="cover"
@@ -52,9 +48,8 @@ const styles = StyleSheet.create({
     text: {fontSize: 15, color: '#fff', fontWeight: 'bold'},
     imgBox: {
         width: 200, height: 300,
-        borderRadius: 15, overflow: 'hidden'
     },
-    image: {width: '100%', height: '100%'}
+    image: {width: '100%', height: '100%', borderRadius: 15}
 })
 
 export default Start
