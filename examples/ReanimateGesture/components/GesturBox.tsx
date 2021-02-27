@@ -50,7 +50,7 @@ const GesturBox = ({children}: GesturBoxProps) => {
     }
 
     const onScrollPress = () => {
-        const SCROLL_SIZE = 600
+        const SCROLL_SIZE = 700
         scrollTo(SCROLL_SIZE)
     }
 
