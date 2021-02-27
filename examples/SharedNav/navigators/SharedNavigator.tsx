@@ -4,7 +4,7 @@ import Start from '../screen/Start'
 import ItemDetail from '../screen/ItemDetail'
 
 const Stack = createSharedElementStackNavigator()
-
+ 
 const App = () => {
     return <Stack.Navigator headerMode={'none'}>
         <Stack.Screen name={SCREEN_NAME_SHARED.START_LIST} component={Start}/>
