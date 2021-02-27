@@ -1,18 +1,7 @@
 import clamp from 'clamp'
-import React, {useEffect, useRef} from 'react'
+import React, {useRef} from 'react'
 import {Button, ScrollView, Text, useWindowDimensions, View} from 'react-native'
-import {
-    GestureHandlerGestureEvent,
-    GestureHandlerStateChangeEvent,
-    PanGestureHandler,
-    PanGestureHandlerGestureEvent
-} from 'react-native-gesture-handler'
-import Animated, {
-    useAnimatedGestureHandler, useAnimatedScrollHandler,
-    useAnimatedStyle,
-    useSharedValue,
-    withDecay
-} from 'react-native-reanimated'
+import Animated, {useAnimatedScrollHandler, useSharedValue} from 'react-native-reanimated'
 
 interface GesturBoxProps {
     children: React.ReactNode

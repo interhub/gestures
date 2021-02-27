@@ -1,3 +1,3 @@
-import Start from "./screen/Start";
+import SharedNavigator from './navigators/SharedNavigator'
 
-export default Start
+export default SharedNavigator
