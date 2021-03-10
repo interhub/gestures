@@ -5,9 +5,9 @@ import 'react-native-gesture-handler'
 import NativeGesture from './examples/NativeGesture'
 import ReanimateGesture from './examples/ReanimateGesture'
 import SharedNav from './examples/SharedNav'
+import PanRotate from './examples/PanRotate'
 import {SCREEN_NAME} from './src/SCREEN_NAME'
 import Menu from './src/Menu'
-import {View} from 'react-native'
 
 const Stack = createStackNavigator()
 
@@ -18,6 +18,7 @@ const App = () => {
             <Stack.Screen name={SCREEN_NAME.NATIVE_GESTURE} component={NativeGesture}/>
             <Stack.Screen name={SCREEN_NAME.REANIMATE_GESTURE} component={ReanimateGesture}/>
             <Stack.Screen name={SCREEN_NAME.SHARED_NAV} component={SharedNav}/>
+            <Stack.Screen name={SCREEN_NAME.PAN_ROTATE} component={PanRotate}/>
         </Stack.Navigator>
     </NavigationContainer>
 }
