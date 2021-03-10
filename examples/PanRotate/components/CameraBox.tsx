@@ -1,25 +1,30 @@
 import React from 'react'
 import {PanGestureHandler, PanGestureHandlerGestureEvent} from 'react-native-gesture-handler'
 import Animated, {
+    interpolate,
     useAnimatedGestureHandler,
     useAnimatedStyle,
-    useSharedValue,
+    useSharedValue, withDecay,
     withSpring,
 } from 'react-native-reanimated'
-import {StyleSheet} from 'react-native'
+import {StyleSheet, View} from 'react-native'
 
 const CameraBox = ({children}: { children: React.ReactNode }) => {
     const y = useSharedValue(0)
+    const x = useSharedValue(0)
 
-    const gestureHandler = useAnimatedGestureHandler<PanGestureHandlerGestureEvent, { startY: number }>({
+    const gestureHandler = useAnimatedGestureHandler<PanGestureHandlerGestureEvent, { startY: number, startX: number }>({
         onStart: (_, ctx) => {
             ctx.startY = y.value
+            ctx.startX = x.value
         },
         onActive: (event, ctx) => {
             y.value = ctx.startY + event.translationY
+            x.value = ctx.startX + event.translationX
         },
-        onEnd: (_) => {
-            y.value = withSpring(0)
+        onEnd: (event) => {
+            y.value = withDecay({velocity: event.velocityY})
+            x.value = withDecay({velocity: event.velocityX})
         },
     })
 
@@ -27,7 +32,10 @@ const CameraBox = ({children}: { children: React.ReactNode }) => {
         return {
             transform: [
                 {
-                    translateY: y.value,
+                    rotateX: interpolate(y.value, [-500, 0, 500], [-2 * Math.PI, 0, 2 * Math.PI]),
+                },
+                {
+                    rotateY: interpolate(-x.value, [-500, 0, 500], [-2 * Math.PI, 0, 2 * Math.PI]),
                 },
             ],
         }
@@ -35,8 +43,10 @@ const CameraBox = ({children}: { children: React.ReactNode }) => {
 
     return (
         <PanGestureHandler onGestureEvent={gestureHandler}>
-            <Animated.View style={[{height: 300, width: 300, backgroundColor: 'green'}, animatedStyle]}>
-                {children}
+            <Animated.View>
+                <Animated.View style={[{height: 300, width: 300, backgroundColor: 'green'}, animatedStyle]}>
+                    {children}
+                </Animated.View>
             </Animated.View>
         </PanGestureHandler>
     )
