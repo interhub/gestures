@@ -1,20 +1,14 @@
 import React from 'react'
 import {Image, StyleSheet, View} from 'react-native'
 import CameraBox from '../components/CameraBox'
-// import Canvas from 'react-native-canvas'
+// import {cameraWithTensors} from '@tensorflow/tfjs-react-native'
+// import {Camera} from 'expo-camera'
+
 
 const Start = () => {
 
-    const handleCanvas = (canvas: any) => {
-        if (!canvas) return
-        const ctx = canvas.getContext('2d')
-        ctx.fillStyle = 'purple'
-        ctx.fillRect(0, 0, 100, 100)
-    }
-
     return (
         <View style={styles.container}>
-            {/*<Canvas ref={handleCanvas}/>*/}
             <CameraBox>
                 <Image
                     style={styles.image}

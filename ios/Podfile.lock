@@ -7,6 +7,14 @@ PODS:
     - UMCore
     - UMFileSystemInterface
     - UMPermissionsInterface
+  - EXCamera (9.1.1):
+    - UMBarCodeScannerInterface
+    - UMCameraInterface
+    - UMCore
+    - UMFaceDetectorInterface
+    - UMFileSystemInterface
+    - UMImageLoaderInterface
+    - UMPermissionsInterface
   - EXConstants (9.3.5):
     - UMConstantsInterface
     - UMCore
@@ -292,6 +300,8 @@ PODS:
     - React-Core (= 0.63.4)
     - React-cxxreact (= 0.63.4)
     - React-jsi (= 0.63.4)
+  - RNCAsyncStorage (1.14.1):
+    - React-Core
   - RNCMaskedView (0.1.10):
     - React
   - RNGestureHandler (1.10.3):
@@ -333,12 +343,12 @@ PODS:
   - UMBarCodeScannerInterface (5.4.0)
   - UMCameraInterface (5.4.0)
   - UMConstantsInterface (5.4.0)
-  - UMCore (7.0.0)
+  - UMCore (6.0.0)
   - UMFaceDetectorInterface (5.4.0)
   - UMFileSystemInterface (5.4.0)
   - UMFontInterface (5.4.0)
   - UMImageLoaderInterface (5.4.0)
-  - UMPermissionsInterface (6.0.0):
+  - UMPermissionsInterface (5.4.0):
     - UMCore
   - UMReactNativeAdapter (5.7.0):
     - React-Core
@@ -352,6 +362,7 @@ DEPENDENCIES:
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - EXApplication (from `../node_modules/expo-application/ios`)
   - EXAV (from `../node_modules/expo-av/ios`)
+  - EXCamera (from `../node_modules/expo-camera/ios`)
   - EXConstants (from `../node_modules/expo-constants/ios`)
   - EXErrorRecovery (from `../node_modules/expo-error-recovery/ios`)
   - EXFileSystem (from `../node_modules/expo-file-system/ios`)
@@ -393,6 +404,7 @@ DEPENDENCIES:
   - React-RCTText (from `../node_modules/react-native/Libraries/Text`)
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
@@ -424,6 +436,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-application/ios"
   EXAV:
     :path: "../node_modules/expo-av/ios"
+  EXCamera:
+    :path: "../node_modules/expo-camera/ios"
   EXConstants:
     :path: "../node_modules/expo-constants/ios"
   EXErrorRecovery:
@@ -502,6 +516,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/Libraries/Vibration"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
   RNCMaskedView:
     :path: "../node_modules/@react-native-community/masked-view"
   RNGestureHandler:
@@ -546,6 +562,7 @@ SPEC CHECKSUMS:
   DoubleConversion: cde416483dac037923206447da6e1454df403714
   EXApplication: e3c201e7b913d081bbd37bd3c5d0e2cdc21733b4
   EXAV: e32adf44c10a82f723172d5b01d5693890888dd6
+  EXCamera: 06ece8c6124560cfd71703b2c26eba72128bfa6d
   EXConstants: 54d0bf04319d1692c6c7bc03ca151ef7a71705a4
   EXErrorRecovery: b46af4b91e2b4ec598ab1fa51d2cf088aaf5511f
   EXFileSystem: 0e4974ab77bff04cda68d2886d070cbe64b93a6b
@@ -585,6 +602,7 @@ SPEC CHECKSUMS:
   React-RCTText: 5c51df3f08cb9dedc6e790161195d12bac06101c
   React-RCTVibration: ae4f914cfe8de7d4de95ae1ea6cc8f6315d73d9d
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
+  RNCAsyncStorage: fe58eec522885718d6b297b7b658bf87d7ca557b
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
   RNReanimated: ca4f28c765329144d68bdad126bf6b0b1afc7a5a
@@ -594,12 +612,12 @@ SPEC CHECKSUMS:
   UMBarCodeScannerInterface: 3f6c1b09ef4b867ce752b8c0b3893bcf9cd85f32
   UMCameraInterface: d516032121192fee9a6c93bdfff0bb2cc7282796
   UMConstantsInterface: 6825ea3832d26ed392ca6eff2df84edd69968fd0
-  UMCore: a882a262c77a535d46b058c150f957eface073f4
+  UMCore: 97ba5041c9c92317ce61739f6d126a692c8ef4a8
   UMFaceDetectorInterface: 60b36b07faa539205efce30b20c192e058b31c23
   UMFileSystemInterface: ab01294ce58a3c773aefb4a5b131ce589c199559
   UMFontInterface: 85fe1b845fb7caab45e04d9ce47e1677a5ce90a5
   UMImageLoaderInterface: 18f37df089b7e6d301e3acac025a8264d26b66d6
-  UMPermissionsInterface: 8d2b3d410fb4f7d969c1a46c7ad968f67a7f178d
+  UMPermissionsInterface: 807e5733b4c6607f35757b1dd128f370718d2f94
   UMReactNativeAdapter: 172def7895b2cb44a7dd021336e316d5fa8ea958
   UMSensorsInterface: 4df9ec662134de5614ae61acc249d6912db87ca5
   UMTaskManagerInterface: 4c60b43eaf3cb05a164bc9113258a171c18b7bf7

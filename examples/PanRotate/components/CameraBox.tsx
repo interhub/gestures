@@ -4,10 +4,9 @@ import Animated, {
     interpolate,
     useAnimatedGestureHandler,
     useAnimatedStyle,
-    useSharedValue, withDecay,
-    withSpring,
+    useSharedValue,
+    withDecay,
 } from 'react-native-reanimated'
-import {StyleSheet, View} from 'react-native'
 
 const CameraBox = ({children}: { children: React.ReactNode }) => {
     const y = useSharedValue(0)
