@@ -2,8 +2,8 @@ import React from 'react'
 import {StyleSheet, Text, useWindowDimensions, View} from 'react-native'
 import {cameraWithTensors} from '@tensorflow/tfjs-react-native'
 import {Camera} from 'expo-camera'
-import handpose from '@tensorflow-models/handpose'
-import tf from '@tensorflow/tfjs'
+import * as handpose from '@tensorflow-models/handpose'
+import * as tf from '@tensorflow/tfjs'
 
 const TensorCamera = cameraWithTensors(Camera)
 
@@ -11,11 +11,12 @@ const Start = () => {
     const {width, height} = useWindowDimensions()
     const startHandPose = async (images: any, updatePreview: any, gl: any) => {
         await tf.ready()
-        console.log(images, updatePreview, gl, 'ALL DEPS')
+        await tf.setBackend('cpu')
         const nextImageTensor = images.next().value
+        console.log(nextImageTensor, 'ALL DEPS')
         const model = await handpose.load()
 
-        const getNet = async () => await model.estimateHands(nextImageTensor, {flipHorizontal: false})
+        const getNet = async () => await model.estimateHands(nextImageTensor)
         const animate = (async () => {
             const net = await getNet()
             console.log(net, 'NET')
@@ -69,7 +70,8 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#78bdd0',
-        paddingTop: 50
+        paddingTop: 50,
+        paddingHorizontal: 20
     },
     camera: {
         width: '100%',
